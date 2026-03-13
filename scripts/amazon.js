@@ -1,7 +1,8 @@
 import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
-let productsHTML = "";
+import * as money from "./utils/money.js";
 
+let productsHTML = "";
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container">
@@ -23,7 +24,7 @@ products.forEach((product) => {
           </div>
 
           <div class="product-price">
-            $${(product.priceCents / 100).toFixed(2)}
+            $${money.formatCurrency(product.priceCents)}
           </div>
 
           <div class="product-quantity-container">
@@ -54,6 +55,7 @@ products.forEach((product) => {
         </div>
   `;
 });
+document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 function updateCartQuantity() {
   let cartQuantity = 0;
@@ -62,8 +64,6 @@ function updateCartQuantity() {
   });
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
-
-document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
