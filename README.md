@@ -2,6 +2,8 @@
 
 A full-stack e-commerce application built with vanilla JavaScript, HTML, and CSS. This project was developed as part of a comprehensive web development course and demonstrates core concepts in front-end architecture, state management, and user interaction patterns.
 
+**Live Demo:** https://javascript-amazon-phantom.netlify.app/
+
 ## Overview
 
 This is a functional e-commerce application that simulates the core features of an online shopping platform. It showcases DOM manipulation, event handling, localStorage for persistent data, and modular JavaScript organization—all fundamental skills for modern web development.
@@ -22,7 +24,7 @@ Note: This project uses JavaScript modules (ES6 imports) which require a local s
 
 ```
 javascript-amazon-project/
-├── index.html           # Main product catalog page
+├── amazon.html           # Main product catalog page
 ├── checkout.html         # Checkout and order review page
 ├── orders.html           # Order history page
 ├── tracking.html         # Order tracking page
@@ -46,14 +48,12 @@ javascript-amazon-project/
 ### Installation
 
 1. Clone the repository:
-
 ```bash
 git clone https://github.com/PhantomRuffy/javascript-amazon-project.git
 cd javascript-amazon-project
 ```
 
 2. Start a local server:
-
 ```bash
 # Using Python 3
 python -m http.server 8000
@@ -62,7 +62,7 @@ python -m http.server 8000
 npx http-server
 
 # Using VS Code Live Server extension
-# Right-click on index.html and select "Open with Live Server"
+# Right-click on amazon.html and select "Open with Live Server"
 ```
 
 3. Open in your browser at `http://localhost:8000` (or the port specified by your server)
@@ -76,29 +76,24 @@ npx http-server
 ## Usage
 
 ### Browsing Products
-
-- Start on index.html to view available products
+- Start on amazon.html to view available products
 - Click on a product to see more details
 - Adjust quantity and add to cart
 
 ### Adding to Cart
-
 - Use the "Add to Cart" button on product listings
 - Cart data persists even after browser refresh via localStorage
 
 ### Checkout
-
 - Navigate to checkout.html to review your cart
 - Review items, quantities, and pricing
 - Complete the order to proceed
 
 ### Viewing Orders
-
 - Visit orders.html to see your order history
 - Each order displays date, items, and total price
 
 ### Tracking Orders
-
 - Use tracking.html to monitor delivery status
 - View estimated delivery dates and current location
 
@@ -109,25 +104,21 @@ npx http-server
 The codebase is organized into functional modules:
 
 **Backend** (backend/)
-
 - Order processing and management
 - Cart calculations and validation
 - Data handling utilities
 
 **Data** (data/)
-
 - Product catalog information
 - Order records
 - Pricing data
 
 **Scripts** (scripts/)
-
 - DOM manipulation and rendering
 - Event handlers and listeners
 - Business logic and cart management
 
 **Styles** (styles/)
-
 - Global stylesheet
 - Page-specific styling
 - Layout and responsive design
@@ -137,7 +128,6 @@ The codebase is organized into functional modules:
 ### Browser Storage
 
 This project uses localStorage to persist user data:
-
 - Shopping cart contents
 - Order history
 - Session information
@@ -155,7 +145,6 @@ Data is serialized as JSON for storage and survives browser restarts.
 ## Learning Outcomes
 
 This project demonstrates proficiency in:
-
 - DOM manipulation and event handling
 - Modular JavaScript organization
 - State management with localStorage
@@ -183,7 +172,8 @@ This project demonstrates proficiency in:
 
 ## Author
 
-Francesco ([PhantomRuffy](github.com/PhantomRuffy))
+Francesco (PhantomRuffy)
+- GitHub: github.com/PhantomRuffy
 
 ---
 
