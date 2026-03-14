@@ -22,7 +22,7 @@ Note: This project uses JavaScript modules (ES6 imports) which require a local s
 
 ```
 javascript-amazon-project/
-├── amazon.html           # Main product catalog page
+├── index.html           # Main product catalog page
 ├── checkout.html         # Checkout and order review page
 ├── orders.html           # Order history page
 ├── tracking.html         # Order tracking page
@@ -62,7 +62,7 @@ python -m http.server 8000
 npx http-server
 
 # Using VS Code Live Server extension
-# Right-click on amazon.html and select "Open with Live Server"
+# Right-click on index.html and select "Open with Live Server"
 ```
 
 3. Open in your browser at `http://localhost:8000` (or the port specified by your server)
@@ -77,7 +77,7 @@ npx http-server
 
 ### Browsing Products
 
-- Start on amazon.html to view available products
+- Start on index.html to view available products
 - Click on a product to see more details
 - Adjust quantity and add to cart
 
