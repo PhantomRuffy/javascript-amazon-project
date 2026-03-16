@@ -1,14 +1,14 @@
 class Cart {
   cartItems;
-  localeStorageKey;
+  #localeStorageKey;
 
   constructor(localeStorageKey) {
-    this.localeStorageKey = localeStorageKey;
-    this.loadFromStorage();
+    this.#localeStorageKey = localeStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localeStorageKey));
+  #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localeStorageKey));
     if (!this.cartItems) {
       //this.cartItems = [];
       this.cartItems = [
@@ -27,7 +27,7 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.localeStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localeStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId) {
@@ -74,12 +74,10 @@ class Cart {
   }
 }
 
-localStorage.clear();
+//localStorage.clear();
 
 const cart = new Cart("cart-oop");
 const businessCart = new Cart("cart-business");
-
-businessCart.addToCart("83d4ca15-0f35-48f5-b7a3-1ea210004f2e");
 
 console.log(cart);
 console.log(businessCart);
