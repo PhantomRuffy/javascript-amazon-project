@@ -1,11 +1,8 @@
 import { formatCurrency } from "../scripts/utils/money.js";
 
 export function getProduct(productId) {
-  let matchingProduct;
-  products.forEach((product) => {
-    if (product.id === productId) matchingProduct = product;
-  });
-  return matchingProduct;
+  const product = products.find((product) => product.id === productId);
+  return product;
 }
 
 class Product {
@@ -594,6 +591,7 @@ export function loadProductsFetch() {
         }
       });
       console.log("load products");
+      //console.log(products);
     }); /*.catch((error) => {
       console.log(`unexpected error. Please try again later.`);
     });*/
@@ -623,7 +621,7 @@ export function loadProducts(fun) {
     fun();
   });
 
-  xhr.addEventListener('error', (error) => {
+  xhr.addEventListener("error", (error) => {
     console.log(`unexpected error. Please try again later.`);
   });
 
