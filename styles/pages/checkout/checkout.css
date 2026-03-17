@@ -42,6 +42,11 @@
   }
 }
 
+.new-quantity-input {
+  width: 50px;
+  font-size: 16px;
+}
+
 .cart-item-container,
 .payment-summary {
   border: 1px solid rgb(222, 222, 222);
