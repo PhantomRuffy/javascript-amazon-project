@@ -76,31 +76,6 @@ images/            # Product images and icons
 * Handling race conditions in asynchronous data loading
 * Test isolation: why each test needs clean state (beforeEach hooks)
 
-## Common Issues & Fixes
-
-**MIME Type Error:** Missing `.js` extension on module imports
-
-```javascript
-// ❌ Wrong
-import { func } from "./module"
-// ✅ Correct
-import { func } from "./module.js"
-```
-
-**Favicon 404:** Add favicon link to HTML
-
-```html
-<link rel="icon" href="images/icons/amazon-favicon.png">
-```
-
-**localStorage Mocking Fails:** Spies must be set up before cart initialization, and old storage data must be cleared between tests
-
-```javascript
-beforeEach(() => localStorage.clear());
-spyOn(localStorage, "getItem").and.callFake(...);
-loadFromStorage();  // Call AFTER spy setup
-```
-
 ## How to Run
 
 ### Prerequisites
