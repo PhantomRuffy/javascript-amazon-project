@@ -2,7 +2,7 @@
 
 A full-stack e-commerce application built with vanilla JavaScript, HTML, and CSS. This project was developed as part of a comprehensive web development course and demonstrates core concepts in front-end architecture, state management, and user interaction patterns.
 
-**Click [here](https://javascript-amazon-phantom.netlify.app/) to see a live demo fo the website.**
+**Click [here](https://phantomruffy.great-site.net/) to see a live demo fo the website.**
 
 ## Overview
 
