@@ -1,4 +1,4 @@
-import { cart } from "../../data/cart.js";
+import { cart, clearCart } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
 import { getDeliveryOption } from "../../data/deliveryOptions.js";
 import { formatCurrency } from "../utils/money.js";
@@ -54,8 +54,12 @@ export function renderPaymentSummary() {
   `;
   document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
 
-  document.querySelector(".js-place-order")
+  document
+    .querySelector(".js-place-order")
     .addEventListener("click", async () => {
+      if (cart.length === 0) {
+        return; // Do nothing if cart is empty
+      }
       try {
         const response = await fetch("https://supersimplebackend.dev/orders", {
           method: "POST",
@@ -66,12 +70,17 @@ export function renderPaymentSummary() {
             cart: cart,
           }),
         });
+        clearCart();
+        console.log(cart);
         const order = await response.json();
         addOrder(order);
-
       } catch (error) {
         console.log("Unexpected error. Try again later.");
       }
       window.location.href = "orders.html";
     });
+
+  if (cart.length === 0) {
+    document.querySelector(".js-place-order").style.opacity = 0.6;
+  }
 }

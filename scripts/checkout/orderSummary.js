@@ -15,6 +15,15 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
   const orderSummary = document.querySelector(".js-order-summary");
+
+  if (cart.length === 0) {
+    orderSummary.innerHTML = `
+      <div data-testid="empty-cart-message">Your cart is empty.</div>
+      <a class="button-primary view-products-link" href="." data-testid="view-products-link">View products</a>
+    `;
+    return;
+  }
+
   orderSummary.innerHTML = "";
 
   cart.forEach((cartItem) => {
